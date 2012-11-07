@@ -1,0 +1,47 @@
+{\rtf1\ansi\ansicpg950\cocoartf1138\cocoasubrtf230
+{\fonttbl\f0\fnil\fcharset136 STHeitiTC-Light;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww15700\viewh9880\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs36 \cf0 IPaXMLParser\'a5\'d8\'ab\'65\'a5\'44\'ad\'6e\'ac\'4f\'a5\'ce XPath\'aa\'ba\'a4\'e8\'a6\'a1\'a5\'68\'a7\'e4\'a8\'ec\'a9\'d2\'b7\'51\'a7\'e4\'aa\'ba\'b8\'60\'c2\'49\
+\
+\'a6\'70\'aa\'47\'b7\'51\'aa\'bd\'b1\'b5\'c5\'aa\'b6\'69\'be\'e3\'ad\'d3xml\'c0\'c9\'ae\'d7\'a1\'41\'a5\'69\'a5\'48\'a4\'a3\'a5\'ce\'a5\'a6\
+\
+IPaXMLSection\'ac\'4f\'a5\'ce\'a8\'d3\'c5\'aaxml\'aa\'ba\
+\
+\pard\tx866\pardeftab866\pardirnatural
+\cf0 \'a8\'43\'ad\'d3IPaXMLSection\'a5\'4e\'aa\'ed  <a>   ------>   </a>  \'b3\'6f\'bc\'cb\'aa\'ba\'a4\'40\'ad\'d3\'b0\'cf\'b6\'f4\'a1\'41\'a5\'d8\'ab\'65\'b7\'7c\'b1\'4e\'b8\'cc\'ad\'b1\'aa\'ba\'a6\'57\'ba\'d9\'a1\'42\'ad\'c8\'c1\'d9\'a6\'b3attribute\'aa\'ba\'b8\'ea\'ae\'c6\'a1\'41\'c1\'d9\'a6\'b3\'a4\'6c\'b8\'60\'c2\'49\'a6\'73\'b0\'5f\'a8\'d3\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 \
+\pard\tx866\pardeftab866\pardirnatural
+\cf0 \CocoaLigature0 \'b0\'f2\'a5\'bb\'a4\'57\'a5\'75\'ad\'6e\'a8\'cf\'a5\'ce\'b3\'6f\'a8\'e2\'ad\'d3\'ab\'fc\'a5\'4f\'a8\'d3\'aa\'ec\'a9\'6c\'a4\'c6\'b4\'4e\'a5\'69\'a5\'48\'c5\'aa\'b6\'69xml\'c0\'c9\'ae\'d7\'a4\'46:\CocoaLigature1 \
+
+\f1 \CocoaLigature0 -(id)initWithXMLData:(NSData*)data;\
+-(id)initWithXMLFile:(NSString*)fileName;\
+\
+\
+
+\f0 \'a5\'69\'a5\'48\'a5\'ce\'b3\'6f\'a8\'e2\'ad\'d3\'ab\'fc\'a5\'4f\'a8\'d3\'a8\'fa\'b1\'6f\'a4\'6c\'b8\'60\'c2\'49:\
+key\'a5\'4e\'aa\'ed\'a9\'d2\'b7\'51\'ad\'6e\'b4\'4d\'a7\'e4\'a4\'6c\'b8\'60\'c2\'49\'aa\'ba\'a6\'57\'ba\'d9
+\f1 \
+-(NSArray*)SectionsWithKey:(NSString*)key;\
+-(IPaXMLSection*)FirstSectionWithKey:(NSString*)key;\
+\
+\
+@property (nonatomic,copy) NSString *Name;\
+@property (nonatomic,copy) NSString *Value;\
+@property (nonatomic,strong) NSMutableDictionary *attributes;\
+@property (nonatomic,strong) NSMutableArray *children;\
+\
+
+\f0 \'a5\'d8\'ab\'65\'b4\'4e\'a5\'75\'a6\'b3\'b3\'6f\'a8\'c7\'c2\'b2\'b3\'e6\'aa\'ba\'a5\'5c\'af\'e0\'a1\'41\'a4\'e9\'ab\'e1\'a6\'70\'aa\'47\'a6\'b3\'bb\'dd\'ad\'6e\'b7\'7c\'a6\'62\'ba\'43\'ba\'43\'bc\'57\'a5\'5b\
+\
+\
+\'a8\'cf\'a5\'ce\'ae\'c9\'a1\'41\'bd\'d0\'b0\'4f\'b1\'6f\'a5\'5b\'a4\'4alibxml2.dylib\'aa\'balibrary\
+\
+\'a8\'c3\'a5\'42\'a6\'62header search path\'aa\'ba\'a6\'61\'a4\'e8\'a5\'5b\'a4\'4a\
+\
+$(SDKROOT)/usr/include/libxml2/**
+\f1 \
+}

@@ -1,0 +1,248 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6E19D18214AEDB1600FE7C3F /* IPaXMLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E19D18014AEDB1600FE7C3F /* IPaXMLParser.h */; };
+		6E19D18314AEDB1600FE7C3F /* IPaXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E19D18114AEDB1600FE7C3F /* IPaXMLParser.m */; };
+		6E236C9B14AC4D05005BD6AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E236C9A14AC4D05005BD6AA /* Foundation.framework */; };
+		6E236CA114AC4D05005BD6AA /* IPaXMLSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E236CA014AC4D05005BD6AA /* IPaXMLSection.m */; };
+		6E236CA814AC4D32005BD6AA /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E236CA714AC4D32005BD6AA /* libxml2.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6E19D18014AEDB1600FE7C3F /* IPaXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPaXMLParser.h; sourceTree = "<group>"; };
+		6E19D18114AEDB1600FE7C3F /* IPaXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPaXMLParser.m; sourceTree = "<group>"; };
+		6E236C9714AC4D05005BD6AA /* libIPaXMLSection.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIPaXMLSection.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E236C9A14AC4D05005BD6AA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6E236C9E14AC4D05005BD6AA /* IPaXMLSection-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IPaXMLSection-Prefix.pch"; sourceTree = "<group>"; };
+		6E236C9F14AC4D05005BD6AA /* IPaXMLSection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IPaXMLSection.h; sourceTree = "<group>"; };
+		6E236CA014AC4D05005BD6AA /* IPaXMLSection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IPaXMLSection.m; sourceTree = "<group>"; };
+		6E236CA714AC4D32005BD6AA /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6E236C9414AC4D05005BD6AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E236CA814AC4D32005BD6AA /* libxml2.dylib in Frameworks */,
+				6E236C9B14AC4D05005BD6AA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6E236C8C14AC4D05005BD6AA = {
+			isa = PBXGroup;
+			children = (
+				6E236CA714AC4D32005BD6AA /* libxml2.dylib */,
+				6E236C9C14AC4D05005BD6AA /* IPaXMLSection */,
+				6E236C9914AC4D05005BD6AA /* Frameworks */,
+				6E236C9814AC4D05005BD6AA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6E236C9814AC4D05005BD6AA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6E236C9714AC4D05005BD6AA /* libIPaXMLSection.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6E236C9914AC4D05005BD6AA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6E236C9A14AC4D05005BD6AA /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6E236C9C14AC4D05005BD6AA /* IPaXMLSection */ = {
+			isa = PBXGroup;
+			children = (
+				6E19D18014AEDB1600FE7C3F /* IPaXMLParser.h */,
+				6E19D18114AEDB1600FE7C3F /* IPaXMLParser.m */,
+				6E236C9F14AC4D05005BD6AA /* IPaXMLSection.h */,
+				6E236CA014AC4D05005BD6AA /* IPaXMLSection.m */,
+				6E236C9D14AC4D05005BD6AA /* Supporting Files */,
+			);
+			path = IPaXMLSection;
+			sourceTree = "<group>";
+		};
+		6E236C9D14AC4D05005BD6AA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6E236C9E14AC4D05005BD6AA /* IPaXMLSection-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		6E236C9514AC4D05005BD6AA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E19D18214AEDB1600FE7C3F /* IPaXMLParser.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		6E236C9614AC4D05005BD6AA /* IPaXMLSection */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E236CA414AC4D05005BD6AA /* Build configuration list for PBXNativeTarget "IPaXMLSection" */;
+			buildPhases = (
+				6E236C9314AC4D05005BD6AA /* Sources */,
+				6E236C9414AC4D05005BD6AA /* Frameworks */,
+				6E236C9514AC4D05005BD6AA /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IPaXMLSection;
+			productName = IPaXMLSection;
+			productReference = 6E236C9714AC4D05005BD6AA /* libIPaXMLSection.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6E236C8E14AC4D05005BD6AA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+			};
+			buildConfigurationList = 6E236C9114AC4D05005BD6AA /* Build configuration list for PBXProject "IPaXMLSection" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6E236C8C14AC4D05005BD6AA;
+			productRefGroup = 6E236C9814AC4D05005BD6AA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6E236C9614AC4D05005BD6AA /* IPaXMLSection */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6E236C9314AC4D05005BD6AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E236CA114AC4D05005BD6AA /* IPaXMLSection.m in Sources */,
+				6E19D18314AEDB1600FE7C3F /* IPaXMLParser.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		6E236CA214AC4D05005BD6AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6E236CA314AC4D05005BD6AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6E236CA514AC4D05005BD6AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/IPaXMLSection.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IPaXMLSection/IPaXMLSection-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		6E236CA614AC4D05005BD6AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/IPaXMLSection.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IPaXMLSection/IPaXMLSection-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6E236C9114AC4D05005BD6AA /* Build configuration list for PBXProject "IPaXMLSection" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E236CA214AC4D05005BD6AA /* Debug */,
+				6E236CA314AC4D05005BD6AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6E236CA414AC4D05005BD6AA /* Build configuration list for PBXNativeTarget "IPaXMLSection" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E236CA514AC4D05005BD6AA /* Debug */,
+				6E236CA614AC4D05005BD6AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6E236C8E14AC4D05005BD6AA /* Project object */;
+}
