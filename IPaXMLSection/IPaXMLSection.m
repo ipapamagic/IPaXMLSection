@@ -325,7 +325,7 @@
     if (!xmlTextReaderIsEmptyElement(reader)) {
         int nodeType;
         
-        if (xmlTextReaderRead(reader)) {
+        if (xmlTextReaderRead(reader) == 1) {
             nodeType = xmlTextReaderNodeType(reader);
             if (nodeType == 3) {
                 if (xmlTextReaderHasValue(reader)) {
@@ -335,7 +335,7 @@
                         self.Value = [valueStr stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
                         xmlFree(value);
                     }
-                    if (!xmlTextReaderRead(reader)){
+                    if (xmlTextReaderRead(reader) != 1){
                         return NO;
                     }
                 }
@@ -368,7 +368,7 @@
                 default:
                     break;
             }
-        }while (xmlTextReaderRead(reader));
+        }while (xmlTextReaderRead(reader) == 1);
         
         return NO;
     }
