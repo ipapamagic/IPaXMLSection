@@ -15,7 +15,7 @@
 #import <Foundation/Foundation.h>
 #include <libxml/tree.h>
 @interface IPaXMLSection : NSObject {
-
+    
 }
 -(id)initWithXMLData:(NSData*)data;
 -(id)initWithXMLFile:(NSString*)fileName;
@@ -32,6 +32,10 @@
 //but if you have two sections with the same name,the last one will replace value  the value in dictionary
 //just process one level (children of children will not be processed)
 -(NSDictionary*)childrenAsDictionary;
+-(NSString*)asString;
+
+//will add <?xml version=\"1.0\" encoding=\"UTF-8\"?> at title
+-(NSString*)asXMLFormatString;
 @property (nonatomic,copy) NSString *Name;
 @property (nonatomic,copy) NSString *Value;
 @property (nonatomic,strong) NSMutableDictionary *attributes;

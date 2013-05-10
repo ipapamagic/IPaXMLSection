@@ -8,7 +8,8 @@
 
 #import "IPaXMLSection.h"
 #include <libxml/xmlreader.h>
-
+@interface IPaXMLSection () <NSCopying>
+@end
 @implementation IPaXMLSection
 -(id)initWithXMLFile:(NSString*)fileName
 {
@@ -143,7 +144,60 @@
     }
     return dict;
 }
-
+-(NSString*)asStringWithLevel:(NSUInteger)level
+{
+    NSString *retString = @"";
+    NSString *tabString = @"";
+    if (level > 0) {
+        for (NSUInteger idx = 0;idx < level;idx++) {
+            tabString = [tabString stringByAppendingString:@"\t"];
+        }
+    }
+    NSString *attr = @"";
+    NSArray* allKeys = [self.attributes allKeys];
+    for (NSString *key in allKeys) {
+        NSString *value = self.attributes[key];
+        attr = [attr stringByAppendingFormat:@" %@=\"%@\"",key,value];
+    }
+    retString = [NSString stringWithFormat:@"%@<%@%@",tabString,self.Name,attr];
+    if ([self.children count] == 0) {
+        if ([self.Value length] == 0) {
+            retString = [retString stringByAppendingString:@"/>\n"];
+        }
+        else {
+            retString = [retString stringByAppendingFormat:@">\t%@\t</%@>\n",self.Value,self.Name];
+        }
+        return retString;
+        
+    }
+    else {
+        
+        if ([self.Value length] > 0) {
+            retString = [retString stringByAppendingFormat:@">\t%@\n",self.Value];
+            
+        }
+        else {
+            retString = [retString stringByAppendingString:@">\n"];
+            
+        }
+        
+        for (IPaXMLSection *subSection in self.children) {
+            retString = [retString stringByAppendingString:[subSection asStringWithLevel:level+1]];
+        }
+        
+    }
+    return [retString stringByAppendingFormat:@"%@</%@>\n",tabString,self.Name];
+    
+    
+}
+-(NSString*)asString
+{
+    return [self asStringWithLevel:0];
+}
+-(NSString*)asXMLFormatString
+{
+    return [@"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" stringByAppendingString:[self asString]];
+}
 #pragma mark - XMLNodeAPI
 -(BOOL)readXMLNode:(xmlNodePtr)node
 {
@@ -295,10 +349,12 @@
     }
     self.Name = [NSString stringWithCString:(const char*)name encoding:NSUTF8StringEncoding];
     xmlFree(name);
+    
+    BOOL isEmptyElement = xmlTextReaderIsEmptyElement(reader);
     //read Attribute
-    if (xmlTextReaderMoveToFirstAttribute(reader)) {
-        int attributeNum = xmlTextReaderAttributeCount(reader);
-        if (attributeNum > 0) {
+    int attributeNum = xmlTextReaderAttributeCount(reader);
+    if (attributeNum > 0) {
+        if (xmlTextReaderMoveToFirstAttribute(reader)) {
             self.attributes = [NSMutableDictionary dictionaryWithCapacity:attributeNum];
             
             //read attribute
@@ -322,7 +378,7 @@
         }
     }
     
-    if (!xmlTextReaderIsEmptyElement(reader)) {
+    if (!isEmptyElement) {
         int nodeType;
         
         if (xmlTextReaderRead(reader) == 1) {
@@ -346,11 +402,10 @@
         }
         
         self.children = [NSMutableArray array];
-        
+        NSInteger restult;
         do{
             //check end node
             nodeType = xmlTextReaderNodeType(reader);
-            
             switch (nodeType) {
                 case 15:
                     //should go out from here
@@ -368,11 +423,31 @@
                 default:
                     break;
             }
-        }while (xmlTextReaderRead(reader) == 1);
+            restult = xmlTextReaderRead(reader);
+        }while (restult == 1);
         
         return NO;
     }
     return YES;
 }
+#pragma mark - NSCopying
+-(id)copyWithZone:(NSZone *)zone
+{
+    IPaXMLSection *section = [[IPaXMLSection alloc] init];
+    section.Name = self.Name;
+    section.Value = self.Value;
+    section.attributes = [@{} mutableCopy];
+    NSArray* keys = self.attributes.allKeys;
+    for (NSString *key in keys) {
+        section.attributes[key] = [self.attributes[key] copy];
+    }
+    section.children = [@[] mutableCopy];
+    for (IPaXMLSection *child in self.children) {
+        [section.children addObject:[child copy]];
+    }
+    return section;
+}
+
+
 
 @end
