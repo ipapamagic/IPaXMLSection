@@ -135,7 +135,7 @@ static IPaXMLParser *defaultParser;
     xmlDocPtr doc;
     
     /* Load XML document */
-    doc =  xmlReadMemory([data bytes], [data length], "", NULL, XML_PARSE_RECOVER);
+    doc =  xmlReadMemory([data bytes], (int)[data length], "", NULL, XML_PARSE_RECOVER);
     if (doc == NULL) {
         NSLog(@"Unable to parse.");
         return nil;
@@ -162,8 +162,8 @@ static IPaXMLParser *defaultParser;
         value = (currentNode->content != NULL)?[NSString stringWithCString:(const char*)currentNode->content encoding:NSUTF8StringEncoding]:
         @"";
     }
-    NSLog(@"Level :%d ,Type :%d ,Name :%@ , Value: %@ ",level,
-          currentNode->type,Name,value );
+//    NSLog(@"Level :%d ,Type :%d ,Name :%@ , Value: %@ ",level,
+//          currentNode->type,Name,value );
     if (currentNode->properties) {
         NSLog(@"HasAttribute:");
         xmlAttr *attribute = currentNode->properties;

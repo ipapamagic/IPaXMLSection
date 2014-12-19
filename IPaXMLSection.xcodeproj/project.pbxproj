@@ -12,6 +12,8 @@
 		6E236C9B14AC4D05005BD6AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E236C9A14AC4D05005BD6AA /* Foundation.framework */; };
 		6E236CA114AC4D05005BD6AA /* IPaXMLSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E236CA014AC4D05005BD6AA /* IPaXMLSection.m */; };
 		6E236CA814AC4D32005BD6AA /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E236CA714AC4D32005BD6AA /* libxml2.dylib */; };
+		6EC19F421741F63400148B1F /* IPaHTMLSection.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EC19F401741F63400148B1F /* IPaHTMLSection.h */; };
+		6EC19F431741F63400148B1F /* IPaHTMLSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC19F411741F63400148B1F /* IPaHTMLSection.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		6E236C9F14AC4D05005BD6AA /* IPaXMLSection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IPaXMLSection.h; sourceTree = "<group>"; };
 		6E236CA014AC4D05005BD6AA /* IPaXMLSection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IPaXMLSection.m; sourceTree = "<group>"; };
 		6E236CA714AC4D32005BD6AA /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		6EC19F401741F63400148B1F /* IPaHTMLSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPaHTMLSection.h; sourceTree = "<group>"; };
+		6EC19F411741F63400148B1F /* IPaHTMLSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPaHTMLSection.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,8 @@
 				6E19D18114AEDB1600FE7C3F /* IPaXMLParser.m */,
 				6E236C9F14AC4D05005BD6AA /* IPaXMLSection.h */,
 				6E236CA014AC4D05005BD6AA /* IPaXMLSection.m */,
+				6EC19F401741F63400148B1F /* IPaHTMLSection.h */,
+				6EC19F411741F63400148B1F /* IPaHTMLSection.m */,
 				6E236C9D14AC4D05005BD6AA /* Supporting Files */,
 			);
 			path = IPaXMLSection;
@@ -92,6 +98,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E19D18214AEDB1600FE7C3F /* IPaXMLParser.h in Headers */,
+				6EC19F421741F63400148B1F /* IPaHTMLSection.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +154,7 @@
 			files = (
 				6E236CA114AC4D05005BD6AA /* IPaXMLSection.m in Sources */,
 				6E19D18314AEDB1600FE7C3F /* IPaXMLParser.m in Sources */,
+				6EC19F431741F63400148B1F /* IPaHTMLSection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

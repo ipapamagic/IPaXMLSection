@@ -50,18 +50,18 @@
     self = [super init];
     
     
-    xmlTextReaderPtr reader = xmlReaderForMemory([data bytes], [data length], NULL, NULL, (XML_PARSE_NOBLANKS | XML_PARSE_NOCDATA));// | XML_PARSE_NOERROR | XML_PARSE_NOWARNING));
+    xmlTextReaderPtr reader = xmlReaderForMemory([data bytes], (int)[data length], NULL, NULL, (XML_PARSE_NOBLANKS | XML_PARSE_NOCDATA));// | XML_PARSE_NOERROR | XML_PARSE_NOWARNING));
     if (!reader) {
         NSLog(@"Failed to create xmlTextReader");
         return nil;
     }
-    if  (xmlTextReaderSetParserProp(reader, XML_PARSER_VALIDATE, 1) != 0)
-    {
-        NSLog(@"Validate error!!");
-        xmlFreeTextReader(reader);
-        return nil;
-    }
-    
+    //    if  (xmlTextReaderSetParserProp(reader, XML_PARSER_VALIDATE, 1) != 0)
+    //    {
+    //        NSLog(@"Validate error!!");
+    //        xmlFreeTextReader(reader);
+    //        return nil;
+    //    }
+    //
     if (![self readXMLStartElementNode:reader]) {
         NSLog(@"Read Error!!");
         xmlFreeTextReader(reader);
@@ -267,19 +267,24 @@
         //the first child should be Value
         if (childNode->type == XML_TEXT_NODE) {
             self.Value = [[NSString stringWithCString:(const char*)childNode->content encoding:NSUTF8StringEncoding] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+            
+            childNode = childNode->next;
         }
-        childNode = childNode->next;
         
-        if (childNode != NULL) {
+        
+        if (childNode != nil) {
             self.children = [[NSMutableArray alloc] init];
-            while (childNode) {
+            do {
                 if (childNode->type == XML_ELEMENT_NODE) {
                     IPaXMLSection *section = [[IPaXMLSection alloc] initWithXMLNode:childNode];
                     [self.children addObject:section];
                 }
                 childNode = childNode->next;
-            }
+            }while (childNode);
+            
         }
+        
+        
     }
     
     
@@ -425,7 +430,7 @@
             }
             restult = xmlTextReaderRead(reader);
         }while (restult == 1);
-        
+        //can not find end tag
         return NO;
     }
     return YES;
