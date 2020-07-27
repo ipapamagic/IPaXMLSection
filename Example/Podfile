@@ -1,0 +1,12 @@
+source 'https://github.com/ipapamagic/IPaPods.git'
+use_frameworks!
+
+target 'IPaXMLSection_Example' do
+  pod 'IPaXMLSection', :path => '../'
+
+  target 'IPaXMLSection_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

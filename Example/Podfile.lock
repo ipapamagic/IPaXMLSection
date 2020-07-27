@@ -1,0 +1,23 @@
+PODS:
+  - IPaLog (2.3)
+  - IPaXMLSection (2.0):
+    - IPaLog
+
+DEPENDENCIES:
+  - IPaXMLSection (from `../`)
+
+SPEC REPOS:
+  https://github.com/ipapamagic/IPaPods.git:
+    - IPaLog
+
+EXTERNAL SOURCES:
+  IPaXMLSection:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  IPaLog: 94e55e52fa0a4c3954ae8bf19bb56291d4d7ccb8
+  IPaXMLSection: b3b14f85242359b4a8f93cb46a7bf4f8708ae71e
+
+PODFILE CHECKSUM: a4c58db2466f4bfc696ae3b2cd21f30e263ef3c5
+
+COCOAPODS: 1.9.1

@@ -1,7 +1,0 @@
-//
-// Prefix header for all source files of the 'IPaXMLSection' target in the 'IPaXMLSection' project
-//
-
-#ifdef __OBJC__
-    #import <Foundation/Foundation.h>
-#endif
