@@ -38,7 +38,7 @@ public class IPaXMLParser {
         }
         let xpathExpr = xpath.utf8CString.map{ xmlChar(bitPattern: $0) }
         guard let xpathObj = xmlXPathEvalExpression(xpathExpr, xpathCtx),let nodes = xpathObj.pointee.nodesetval else {
-            IPaLog("Error: unable to evaluate xpath expression \"%@\"\n",args: xpathExpr)
+            IPaLog("Error: unable to evaluate xpath expression \"\(xpathExpr)\"\n")
             return [IPaXMLSection]()
         }
         defer {
