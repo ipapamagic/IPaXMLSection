@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'IPaXMLSection'
-  s.version          = '2.1'
+  s.version          = '2.2.0'
   s.summary          = 'libxml2 base XML parser for swift'
 
 # This description is used to generate tags and improve search results.
@@ -30,7 +30,7 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '11.0'
   s.watchos.deployment_target = '2.0'
-  s.source_files = 'IPaXMLSection/Classes/**/*'
+  s.source_files = 'Sources/IPaXMLSection/**/*'
   s.library      = "xml2"
   # s.resource_bundles = {
   #   'IPaXMLSection' => ['IPaXMLSection/Assets/*.png']
@@ -41,5 +41,5 @@ TODO: Add long description of the pod here.
   # s.dependency 'AFNetworking', '~> 2.3'
   s.xcconfig      = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2"}
 
-  s.dependency 'IPaLog'
+  s.dependency 'IPaLog' ,' ~> 3.1.0'
 end
