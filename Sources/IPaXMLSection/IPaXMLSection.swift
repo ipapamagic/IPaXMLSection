@@ -80,7 +80,7 @@ open class IPaXMLSection: NSObject {
 }
 //MARK - open func for reading
 extension IPaXMLSection {
-    open var jsonObject:[String:[String:Any]] {
+    public var jsonObject:[String:[String:Any]] {
         var obj = [String:[String:Any]]()
         var content = [String:Any]()
         for (key,value) in self.attributes {
@@ -110,36 +110,36 @@ extension IPaXMLSection {
         obj[self.name] = content
         return obj
     }
-    open var asString:String {
+    public var asString:String {
         return self.asString(with: 0)
     }
-    open var asXMLFormatString:String {
+    public var asXMLFormatString:String {
         return "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" + self.asString
     }
-    open var childrenDictionary:[String:String] {
+    public var childrenDictionary:[String:String] {
         return self.children.reduce([String:String]()) { (dict, section) in
             var dict = dict
             dict[section.name] = section.value
             return dict
         }
     }
-    open func firstSection(with key:String) -> IPaXMLSection? {
+    public func firstSection(with key:String) -> IPaXMLSection? {
         return self.children.first { (section) -> Bool in
             return section.name == key
         }
     }
-    open func firstValue(with key:String) -> String {
+    public func firstValue(with key:String) -> String {
         guard let section = self.firstSection(with: key) else {
             return ""
         }
         return section.value
     }
-    open func values(with key:String) -> [String] {
+    public func values(with key:String) -> [String] {
         return self.children.compactMap { section in
             return (section.name == key) ? section.value : nil
         }
     }
-    open func sections(with key:String) -> [IPaXMLSection] {
+    public func sections(with key:String) -> [IPaXMLSection] {
         return self.children.filter { section in
             return section.name == key
         }
